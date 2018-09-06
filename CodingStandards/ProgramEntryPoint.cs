@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 class Program
 {
-    //This is the entry point for the program.
+    // This is the entry point for the program.
+    
     static int Main(string[] args)
     {
         return writeMessage(dtNow, Console.Out);
@@ -15,23 +16,31 @@ class Program
 
     static DateTime dtNow = DateTime.Now;
 
-    public static int writeMessage(DateTime CurrentDate, TextWriter writer)
+    public static int writeMessage(DateTime currentDate, TextWriter writer)
+    
     {
-        var intRetVal = 0; const Int32 MESSAGE_COUNT = 5; for (int MyIndex = 0; MyIndex < MESSAGE_COUNT; MyIndex++)
+        int intReturnValue = 0;
+        const int messageCount = 5;
+
+        for (int myIndex = 0; myIndex < messageCount; myIndex++)
+        {
             /*********************/
             /* greater than 2017 */
             /*********************/
-            if (CurrentDate.Year > 2017) writer.WriteLine("Happy New Year!");
+
+            if (currentDate.Year > 2017)
+            {
+                writer.WriteLine("Happy New Year!");
+            }
+
             else
-                writer.WriteLine("Hello From " + CurrentDate.Year);
-
-
+            {
+                writer.WriteLine("Hello From " + currentDate.Year);
+            }
+        }
         //--------------------return the result value----------------------------
 
-
-
-
-        return intRetVal;
+        return intReturnValue;
     }
 }
 
