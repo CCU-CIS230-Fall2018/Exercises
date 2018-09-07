@@ -7,31 +7,34 @@ using System.Threading.Tasks;
 
 class Program
 {
-    //This is the entry point for the program.
+    // This is the entry point for the program.
     static int Main(string[] args)
     {
-        return writeMessage(dtNow, Console.Out);
+        return WriteMessage(dateNow, Console.Out);
     }
 
-    static DateTime dtNow = DateTime.Now;
+    static DateTime dateNow = DateTime.Now;
 
-    public static int writeMessage(DateTime CurrentDate, TextWriter writer)
+    public static int WriteMessage(DateTime CurrentDate, TextWriter writer)
     {
-        var intRetVal = 0; const Int32 MESSAGE_COUNT = 5; for (int MyIndex = 0; MyIndex < MESSAGE_COUNT; MyIndex++)
-            /*********************/
-            /* greater than 2017 */
-            /*********************/
-            if (CurrentDate.Year > 2017) writer.WriteLine("Happy New Year!");
+        var returnValue = 0;
+        const int messageCount = 5;
+        for (int myIndex = 0; myIndex < messageCount; myIndex++)
+        {
+            // Condition for when the year is greater than 2017.
+
+            if (CurrentDate.Year > 2017)
+            {
+                writer.WriteLine("Happy New Year!");
+            }
             else
+            {
                 writer.WriteLine("Hello From " + CurrentDate.Year);
+            }
+        }
 
-
-        //--------------------return the result value----------------------------
-
-
-
-
-        return intRetVal;
+        // This statement returns the return value.
+        return returnValue;
     }
 }
 
